@@ -1,7 +1,5 @@
 # API SHOP-GRAPHQL
 
-#### deploy: https://api-shop-graphql.herokuapp.com/
-
 #
 
 # Objetivo  
