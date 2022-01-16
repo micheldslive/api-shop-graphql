@@ -39,7 +39,7 @@ As tabelas foram criadas através do módulo de nó "typeORM" usando `synchroniz
 O arquivo `src/connection/index.ts` armazena as informações de conexão do typeORM com o banco de dados desejado.
   
   
-![MySQL print to show created tables in the required database](/demo/PostgreSQL.png "Created tables")
+![MySQL print to show created tables in the required database](/demo/DB-PostgreSQL.png "Created tables")
 
 
 ## Escrevendo as informações iniciais  
