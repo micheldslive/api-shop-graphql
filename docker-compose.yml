@@ -1,0 +1,37 @@
+version: '3'
+services:
+  db-shopql:
+    image: postgres:13.1
+    container_name: 'db-shopql'
+    restart: 'always'
+    volumes:
+      - .:/docker-entrypoint-initdb.d/
+    ports:
+      - '5432:5432'
+    expose:
+      - '5432'
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=shopql
+      - APP_DB_USER=casca
+      - APP_DB_PASS=shopql
+      - APP_DB_NAME=postgres
+    networks:
+      - backend
+  api-shopql:
+    image: node:alpine
+    container_name: 'api-shopql'
+    ports:
+      - '4000:4000'
+    expose:
+      - '4000'
+    working_dir: '/shopql/app'
+    volumes:
+      - .:/shopql/app
+    command: 'yarn dev'
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: 'bridge'
